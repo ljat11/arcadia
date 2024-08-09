@@ -40016,7 +40016,14 @@ const result = selectFields(originalArray, selectedFields);
 console.log(result);
 
 const jsonCreateFile = JSON.stringify(originalArray);
+
 const fs = require('fs');
-fs.writeFile("thing.json", originalArray, function(err) {
-    if(err) console.log('error', err);
-});
+const path = require('path');
+
+    fs.writeFile('./airlinesClear.json', JSON.stringify(result, null, 2), err =>{
+        if (err){
+            console.log(err);
+        } else{
+            console.log('File succesfully Written');
+        }
+    });
