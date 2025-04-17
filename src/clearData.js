@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-// STEP 1: Reading JSON file 
+// Lectura del Json 
 const users = require("./airlines.json");
 
 const data = users.map((users) => ({ id: users.id, name: users.name, icao: users.icao }))
